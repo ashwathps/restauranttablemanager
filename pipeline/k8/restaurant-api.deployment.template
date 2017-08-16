@@ -1,0 +1,56 @@
+{
+    "apiVersion": "v1",
+    "kind": "Deployment",
+    "metadata": {
+        "name": "restaurant-api-deployment",
+        "labels": {
+            "name": "restaurant-api-deployment"
+        }
+    },
+    "spec": {
+        "replicas": 5,
+        "selector": {
+            "matchLabels": {
+                "name": "restaurant-api"
+            }
+        },
+        "template": {
+            "metadata": {
+                "labels": {
+                    "name": "restaurant-api"
+                },
+                "annotations": {
+                    "scheduler.alpha.kubernetes.io/affinity": "{\"nodeAffinity\":{\"preferredDuringSchedulingIgnoredDuringExecution\":[{\"weight\":100,\"preference\":{\"matchExpressions\":[{\"key\":\"node-type\",\"operator\":\"In\",\"values\":[\"core\"]}]}}]}}"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "name": "api",
+                        "image": "${IMAGE_NAME}",
+                        "ports": [
+                            {
+                                "containerPort": ${HTTP_PORT}
+                            }
+                        ],
+                        "resources": {
+                            "requests": {
+                                "memory": "50Mi"
+                            }
+                        },
+                        "livenessProbe": {
+                        },
+                        "readinessProbe": {
+                        },
+                        "env": [
+                            {
+                                "name": "NODE_ENV",
+                                "value": "production"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

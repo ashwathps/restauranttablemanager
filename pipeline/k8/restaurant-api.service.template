@@ -1,0 +1,21 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "restaurant-api"
+    },
+    "spec": {
+        "selector": {
+            "name": "restaurant-api"
+        },
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 80,
+                "targetPort": ${HTTP_PORT},
+                "nodePort": 30084
+            }
+        ],
+        "type": "NodePort"
+    }
+}
