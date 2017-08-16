@@ -44,7 +44,7 @@ The tests are written using BDD. NodeJS has an extensive library collection to s
 #### Coverage
 
 ```
-  > ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha ./test/**/*.test.js -- -R spec
+  Running `grunt test` will create a coverage report html.
 ```
 #### Linting
 ```
