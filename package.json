@@ -1,0 +1,45 @@
+{
+  "name": "restaurant-api-saas",
+  "version": "1.0.0",
+  "description": "An API gateway for managing a restaurant table",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "precommit": "grunt eslint && npm run coverage",
+    "prepush": "grunt eslint && npm run coverage",
+    "test": "mocha ./test/*.js ./test/**/*.js",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha ./test/*.js ./test/**/*.js -- -R spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "koa": "^1.4.0",
+    "koa-bodyparser": "^2.5.0",
+    "koa-compose": "^2.5.1",
+    "koa-router": "^5.4.0",
+    "lodash": "^4.17.4",
+    "lokijs": "^1.5.0"
+  },
+  "devDependencies": {
+    "co-mocha": "^1.2.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "grunt": "^1.0.1",
+    "grunt-eslint": "^19.0.0",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "grunt-nodemon": "^0.4.2",
+    "husky": "^0.13.4",
+    "istanbul": "^0.4.5",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1",
+    "sinon": "^2.3.2",
+    "supertest": "^3.0.0"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "data": [
+    {
+      "rid": "r-1",
+      "hid": "h-1",
+      "mid": "m-1",
+      "tid": "t-1",
+      "wid": "w-1"
+    },
+    {
+      "rid": "r-1",
+      "hid": "h-1",
+      "mid": "m-1",
+      "tid": "t-2",
+      "wid": "w-2"
+    },
+    {
+      "rid": "r-1",
+      "hid": "h-1",
+      "mid": "m-1",
+      "tid": "t-3",
+      "wid": "w-2"
+    },
+    {
+      "rid": "r-1",
+      "hid": "h-1",
+      "mid": "m-1",
+      "tid": "t-4",
+      "wid": "w-2"
+    },
+    {
+      "rid": "r-2",
+      "hid": "h-1",
+      "mid": "m-1",
+      "tid": "t-2",
+      "wid": "w-1"
+    }
+  ],
+  "waiters": [
+    {
+      "wid": "w-1",
+      "name": "Bob Jones"
+    },
+    {
+      "wid": "w-2",
+      "name": "Tom Adams"
+    },
+    {
+      "wid": "w-3",
+      "name": "Alex March"
+    },
+    {
+      "wid": "w-4",
+      "name": "Foo April"
+    },
+    {
+      "wid": "w-5",
+      "name": "Bar May"
+    },
+    {
+      "wid": "w-6",
+      "name": "Alice June"
+    },
+    {
+      "wid": "w-7",
+      "name": "Pete Max"
+    },
+    {
+      "wid": "w-8",
+      "name": "Dave Flip"
+    }
+  ],
+  "restaurants": [
+    {
+      "rid": "r-1",
+      "mid": "m-1"
+    },
+    {
+      "rid": "r-2",
+      "mid": "m-1"
+    }
+  ],
+  "tables": [
+    {
+      "tid": "t-1",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-2",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-3",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-4",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-5",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-6",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-7",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-8",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-9",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-10",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-11",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-12",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-13",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-14",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-15",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-16",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-17",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-18",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-19",
+      "rid": "r-1"
+    },
+    {
+      "tid": "t-20",
+      "rid": "r-1"
+    }
+  ]
+}

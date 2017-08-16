@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions":{
+    "ecmaVersion": 2017
+  },
+  "rules": {
+    "strict": [0],
+    "react/jsx-indent-props": [1, 2], // 2 space indent
+    "comma-dangle": [2, "always-multiline"],
+    "eol-last": [0],
+    "indent": [1, 2], // 2 space indent
+    "one-var": [2, { "var": "always", "let": "never", "const": "never" }],
+    "max-len": [2, {"code": 128}]
+  },
+  "extends": "airbnb"
+}
