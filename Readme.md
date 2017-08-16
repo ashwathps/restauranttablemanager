@@ -2,6 +2,17 @@
 
 A API service built with Node.js to manage the front of house for a restaurant that allows managers to assign tables to waiters (and to see an overall view of assignment), and allows waiters to view their table assignments.
 
+### Design
+#### Client - Server model
+The service should be seen as a API gateway server with the browser as the client to consume the resource. The API Spec section defines the APIs.
+#### Data
+* The data for the API is driven by a `tableManager` which is the source of truth for all **active** waiter assignments for the restaurant.
+* The data is stored as JSON documents (a NoSQL store) using lokijs for the scope of this program. This can be easily replaced with MongoDB or Azure DocumentDB.
+* Inventory (restaurants, managers, waiters) is stored in their respective collections.
+* All CRUD operations are stateless, self contained with all the required information for successfully assign waiters to appropriate table to the right restaurant.
+#### Authorization
+* The service uses ***koa route middlewares*** to check if a manager is authorized to assign waiters to tables, driven by the inventory. Operations on the inventory must be treated as admin operations (not the scope of this program).
+
 ### Assumptions
 The assumptions are only limited to the initial data set and for DB bootstrap, the API operation itself is not limited by these assumptions.
 
@@ -10,13 +21,6 @@ The assumptions are only limited to the initial data set and for DB bootstrap, t
 * There are 8 waiters
 * Table, Manager, Restaurant and Waiter ids are shothanded to `t-1, m-1, r-1, w-1` respectively for easy access.
 * Name to id mapping.
-
-### Design
-* The data for the API is driven by a `tableManager` which is the source of truth for all **active** waiter assignments for the restaurant.
-* The data is stored as JSON documents (a NoSQL store) using lokijs for the scope of this program. This can be easily replaced with MongoDB or Azure DocumentDB.
-* Inventory (restaurants, managers, waiters) is stored in their respective collections.
-* All CRUD operations are stateless, self contained with all the required information for successfully assign waiters to appropriate table to the right restaurant.
-* The service uses ***koa route middlewares*** to check if a manager is authorized to assign waiters to tables, driven by the inventory. Operations on the inventory must be treated as admin operations (not the scope of this program).
 
 ### Seed data
 The DB is bootrapped upon load with the `seed.json`
@@ -105,7 +109,7 @@ The tests are written using BDD. NodeJS has an extensive library collection to s
   ]
   ```
 
-* Assign a waiter to a table
+* Assign a waiter to a table (manager only)
 
   [PUT] `/api/v1/restaurant/<r-id>/table/<t-id>`
 
@@ -117,7 +121,7 @@ The tests are written using BDD. NodeJS has an extensive library collection to s
   }
   ```
   
-* Unassign a waiter from a table
+* Unassign a waiter from a table (manager only)
 
   [DELETE] `/api/v1/restaurant/<r-id>/table/<t-id>`
 
