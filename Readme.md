@@ -59,7 +59,9 @@ The tests are written using BDD. NodeJS has an extensive library collection to s
 * Waiter View per waiter
 
   [GET] `/api/v1/waiter/<w-id>/assignments`
-
+  
+  `http://localhost:8009/api/v1/waiter/w-2/assignments`
+  
   [RESPONSE]
   
   ```  
@@ -69,7 +71,9 @@ The tests are written using BDD. NodeJS has an extensive library collection to s
 * Waiter View
 
   [GET] `/api/v1/restaurant/<r-id>/waiterview`
-
+  
+  `http://localhost:8009/api/v1/restaurant/r-1/waiterview`
+  
   [RESPONSE]
   ```
   {
@@ -82,7 +86,9 @@ The tests are written using BDD. NodeJS has an extensive library collection to s
 * Manager View
 
   [GET] `/api/v1/restaurant/<r-id>/managerview`
-
+  
+  `http://localhost:8009/api/v1/restaurant/r-1/managerview`
+  
   [RESPONSE]
   ```
   [
@@ -112,7 +118,9 @@ The tests are written using BDD. NodeJS has an extensive library collection to s
 * Assign a waiter to a table (manager only)
 
   [PUT] `/api/v1/restaurant/<r-id>/table/<t-id>`
-
+  
+  `http://localhost:8009/api/v1/restaurant/r-1/table/t-5`
+ 
   [BODY]
   ```
   {
